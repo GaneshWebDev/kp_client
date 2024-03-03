@@ -27,7 +27,7 @@ export default function Projects(){
         viewport={{
           once:true
         }}
-      className="  h-screen relative flex items-center justify-center overflow-hidden mt-10 md:mt-20">
+      className="  h-screen relative flex items-center justify-center overflow-hidden mt-20 md:mt-20">
         <h1 className="  flex absolute top-24 md:top-24  text-4xl font-bold z-99 ">Projects</h1>
        <div className="  flex gap-4 h-[80%] md:h-[60%] w-[90%] md:w-[70%]  mt-40  md:mt-20  overflow-x-scroll snap-x snap-mandatory   md:scrollbar-none scrollbar  scrollbar-thumb-yellow-500 scrollbar-thumb-rounded">
             {projects?.map((project,index)=>{return(
