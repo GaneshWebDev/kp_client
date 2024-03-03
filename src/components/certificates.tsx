@@ -44,12 +44,16 @@ export default function Certificates(){
         viewport={{
           once:true
         }}
-      className=" h-screen relative flex items-center justify-center overflow-hidden mt-10 md:mt-20">
+      className=" h-screen relative flex flex-col items-center justify-center overflow-hidden mt-10 md:mt-20">
         <h1 className=" flex absolute top-24 md:top-24  text-4xl font-bold z-99 ">Certificates</h1>
        <div className=" flex gap-4 h-[60%] md:h-[60%] w-[90%] md:w-[80%]  mt-20 md:mt-10  overflow-x-scroll snap-x snap-mandatory   md:scrollbar-none scrollbar  scrollbar-thumb-yellow-500 scrollbar-thumb-rounded" >
             {certificates?.map((certificate,index)=>{return(
                <Certificate key={index} certificate={certificate} />
             )})}
+            </div>
+            <div className="hidden md:flex items-center justify-center gap-3 font-bold animate-pulse">
+              <img src='swipe-right.png' className="w-8 h-8"/>
+              <span>Swipe</span>
             </div>
       </motion.div>
         </>
