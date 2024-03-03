@@ -69,14 +69,13 @@ export default function CourseIn(){
         </div>
 
             <div className="flex  flex-col md:flex-row h-[35vh] md:h-[60vh] w-[90vw] md:w-[85vw] items-center justify-center  rounded-lg" style={{boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)'}}>
-                    <div className=' flex items-center justify-center h-[55%]   md:h-full w-full md:w-[25%] '>
-                            {selected.img &&<img className=' rounded h-[60%] w-[80%]' src={selected?.img} />}
+                    <div className='border flex items-center justify-center h-[55%]   md:h-full w-full md:w-[25%] '>
+                            {selected.img &&<img className=' rounded h-[80%] md:h-[60%] w-[80%]' src={selected?.img} />}
                     </div>
 
-                    <div className=' flex flex-col m-2 w-full md:w-[60%] mx-[40px]   overflow-y-scroll scrollbar-none'>
+                    <div className=' flex flex-col m-2 w-[90%] md:w-[60%] md:mx-[40px]   overflow-y-scroll scrollbar-none'>
                         <span className=" uppercase  p-1 md:p-2 text-[12px] md:text-[30px] font-bold">{selected.title}</span>
                         <p className=' m-1 my-5 text-[10px] md:text-[20px] '>{selected.desc1}</p>
-                        <p className=' m-1 my-5 text-[10px] md:text-[20px]'></p>
                     </div>
             </div>
 
