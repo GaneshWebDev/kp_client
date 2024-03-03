@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import Project from "./project";
-import ImageSlider from "./imageSlider";
 export default function Projects(){
     const projects=[{
         img:'project1.jpg',

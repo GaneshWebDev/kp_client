@@ -1,7 +1,7 @@
-import { Cursor, Typewriter, useTypewriter} from "react-simple-typewriter";
-import { inView, motion } from "framer-motion";
+import { Cursor, useTypewriter} from "react-simple-typewriter";
+import {  motion } from "framer-motion";
 export default function Hero(){
-    const [text,count]=useTypewriter({
+    const [text]=useTypewriter({
         words:[
             "I'm Kranthi Paul",
         ],

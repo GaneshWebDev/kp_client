@@ -45,10 +45,11 @@ export default function CourseIn(){
             desc2:null
         }
     ]
-    const handleButtonClick = (title) => {
+    const handleButtonClick = (title: string) => {
         const filtered = courseArray.filter(course => course.title === title);
-        setSelected(filtered.length > 0 ? filtered[0] : null);
-    };
+        setSelected(filtered);
+      };
+      
     return(
         <div className="   relative flex flex-col  gap-6 items-center justify-center h-[120vh] md:h-[140vh] w-screen snap-center">
         <h1 className=" absolute top-24 md:top-20 text-4xl font-bold">Course Insights</h1>

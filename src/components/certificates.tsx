@@ -1,9 +1,6 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
 import Certificate from "./certificate";
 export default function Certificates(){
-    const certificateRef=useRef<HTMLDivElement|null>(null);
-    const scrollAmount= 100;
     const certificates=[{
         img:'BA.jpg',
         title:'Business Analytics Certification',
@@ -51,7 +48,7 @@ export default function Certificates(){
         <h1 className=" flex absolute top-24 md:top-24  text-4xl font-bold z-99 ">Certificates</h1>
        <div className=" flex gap-4 h-[60%] md:h-[60%] w-[90%] md:w-[80%]  mt-20 md:mt-10  overflow-x-scroll snap-x snap-mandatory   md:scrollbar-none scrollbar  scrollbar-thumb-yellow-500 scrollbar-thumb-rounded" >
             {certificates?.map((certificate,index)=>{return(
-               <Certificate key={index} certificate={certificate}   ref={certificateRef}/>
+               <Certificate key={index} certificate={certificate} />
             )})}
             </div>
       </motion.div>

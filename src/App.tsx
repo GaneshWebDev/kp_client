@@ -71,7 +71,7 @@ function App() {
     <section ref={sections.skills}>
       <Skills/>
     </section> 
-    <section>
+    <section className='hidden md:flex'>
       <Career/>
     </section> 
     </div>
