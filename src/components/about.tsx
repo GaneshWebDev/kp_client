@@ -1,4 +1,4 @@
-import {motion} from 'framer-motion'
+
 import client from '../sanityClient'
 import {useState,useEffect } from 'react';
 import imageUrlBuilder from '@sanity/image-url'
