@@ -78,7 +78,7 @@ useEffect(()=>{
         <h1 className="absolute  top-20 md:top-24 mt-10 md:mt-0  uppercase tracking-[10px]">Projects</h1>
         <div ref={projectRef} className="flex snap-x snap-mandatory overflow-x-scroll  scroll-smooth w-5/6 h-full scrollbar-none  md:h-3/5 mt-6 md:mt-0">
          {data1?.map((project:any,index:number)=>{return(
-               <Project key={index} project={project}  id={index.toString()}  />
+               <Project key={index} project={project}  id={project.id.toString()}  />
             )})}
         </div>
          <SlideIndicator num={data1.length} index={viewIndex} />  
