@@ -13,7 +13,7 @@ export default function Certificates(){
             console.log(err);
         })
     },[])
-    const certificates=[{
+    /*const certificates=[{
         id:0,
         img:'BA.jpg',
         title:'Business Analytics Certification',
@@ -46,7 +46,7 @@ export default function Certificates(){
         title: 'Illustrator Graphics Designer Certificate',
         desc:"As a certified Illustrator Graphics Designer, I have the creative ability to effectively convey ideas visually. "
     }
-]
+]*/
 const [viewIndex,setViewIdndex]=useState<number>(0);
 const certificateRef=useRef<HTMLDivElement>(null);
 useEffect(()=>{
