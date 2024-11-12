@@ -30,7 +30,7 @@ export default  function Certificate({ certificate,id }:CertificateProps){
         viewport={{
             once:true
         }}
-         className="flex flex-col md:flex-row flex-shrink-0  p-5 items-center md:items-start justify-center w-full h-[100%]  md:h-full snap-center scroll-smooth border" >
+         className="flex flex-col md:flex-row flex-shrink-0  p-5 items-center md:items-start justify-center w-full h-[100%]  md:h-full snap-center scroll-smooth " >
             <div className='flex items-center justify-center h-[45%]   md:h-[100%] w-full md:w-[60%] mt-20 md:mt-0'>
                 <img className='h-full w-full ' src={urlFor(certificate.img.asset._ref).url()} />
             </div>
