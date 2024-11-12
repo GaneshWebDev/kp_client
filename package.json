@@ -10,12 +10,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "@sanity/client": "^6.22.4",
+    "@sanity/image-url": "^1.1.0",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.7.2",
     "framer-motion": "^11.0.8",
     "heroicons-react": "^1.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.2",
     "react-scroll": "^1.9.0",
     "react-simple-typewriter": "^5.0.1",
     "react-social-icons": "^6.14.0"

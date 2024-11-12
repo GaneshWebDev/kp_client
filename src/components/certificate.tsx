@@ -1,14 +1,23 @@
 import { motion } from 'framer-motion';
+import imageUrlBuilder from '@sanity/image-url'
+import client from '../sanityClient';
 interface CertificateProps{
        certificate:{
-        img:string,
+        img:any,
         title:string,
         desc:string
     }
+    id:string
 }
-export default  function Certificate({ certificate }:CertificateProps){
+export default  function Certificate({ certificate,id }:CertificateProps){
+    const builder = imageUrlBuilder(client);
+
+    function urlFor(source:any) {
+        return builder.image(source)
+      }
     return(
         <motion.div
+        id={id}
         initial={{
             opacity:0
         }}
@@ -21,9 +30,9 @@ export default  function Certificate({ certificate }:CertificateProps){
         viewport={{
             once:true
         }}
-         className=" flex  flex-col md:flex-row flex-shrink-0  items-start  justify-center w-[95%] snap-center h-full " >
-            <div className='flex items-center justify-center h-[70%]   md:h-[100%] w-full md:w-[60%] '>
-                <img className='h-full w-full ' src={certificate.img} />
+         className="flex flex-col md:flex-row flex-shrink-0  p-5 items-center md:items-start justify-center w-full h-[100%]  md:h-full snap-center scroll-smooth border" >
+            <div className='flex items-center justify-center h-[45%]   md:h-[100%] w-full md:w-[60%] mt-20 md:mt-0'>
+                <img className='h-full w-full ' src={urlFor(certificate.img.asset._ref).url()} />
             </div>
 
             <div className='flex flex-col m-2 w-full md:w-[40%] md:h-[100%] '>

@@ -34,7 +34,7 @@ export default function Skills(){
     ]
     return(
         <div className="relative flex h-screen items-center justify-center">
-        <h1 className=" flex absolute top-24 md:top-24 lg:top-20 text-4xl font-bold z-99">Skills</h1>
+        <h1 className="absolute  top-20 md:top-24 mt-10 md:mt-0  uppercase tracking-[10px]">Skills</h1>
         <div className=" flex flex-wrap w-[80%]">
             {skills.map((skill, index) => (
                 <div key={index} className=" w-1/2 md:w-1/3 mb-10 mx-0  items-center justify-center">

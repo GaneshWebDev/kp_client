@@ -1,11 +1,11 @@
 import './App.css'
+import client from './sanityClient'
 import { useEffect,useRef,useState } from 'react'
 import Navbar from './components/navbar'
 import About from './components/about'
-import CourseIn from './components/courseIn'
 import Projects from './components/projects'
 import Skills from './components/skills'
-import Career from './components/career'
+import Contact from './components/contact'
 import { initFlowbite } from 'flowbite'
 import Hero from './components/home'
 import Certificates from './components/certificates'
@@ -18,7 +18,8 @@ function App() {
     project: useRef<HTMLDivElement>(null),
     certificate: useRef<HTMLDivElement>(null),
     skills: useRef<HTMLDivElement>(null),
-    career: useRef<HTMLDivElement>(null) // Assuming you have a career section
+    career: useRef<HTMLDivElement>(null),
+    contact: useRef<HTMLDivElement>(null) // Assuming you have a career section
   };
    useEffect(()=>{
      initFlowbite();
@@ -52,15 +53,12 @@ function App() {
    },[])
   return (
     <div className='bg-[#e2dfdb] w-[100vw]' style={{fontFamily:'Georgia'}}>
-    <Navbar hero={sections.hero} about={sections.about} course={sections.course} project={sections.project} certificate={sections.certificate} skills={sections.skills} activeBtn={activeBtn}/>
+    <Navbar hero={sections.hero} about={sections.about} course={sections.course} project={sections.project} certificate={sections.certificate} skills={sections.skills} contact={sections.contact} activeBtn={activeBtn}/>
     <section ref={sections.hero} >
       <Hero />
     </section>
     <section ref={sections.about}>
       <About />
-    </section> 
-    <section ref={sections.course}>
-      <CourseIn/>
     </section> 
     <section ref={sections.project}>
       <Projects/>
@@ -71,9 +69,9 @@ function App() {
     <section ref={sections.skills}>
       <Skills/>
     </section> 
-    <section className='hidden md:flex'>
-      <Career/>
-    </section> 
+    <section ref={sections.contact}>
+      <Contact />
+    </section>
     </div>
   )
 }
