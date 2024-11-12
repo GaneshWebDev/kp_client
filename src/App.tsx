@@ -1,4 +1,5 @@
 import './App.css'
+import client from './sanityClient'
 import { useEffect,useRef,useState } from 'react'
 import Navbar from './components/navbar'
 import About from './components/about'
@@ -27,7 +28,7 @@ function App() {
         if (entry.isIntersecting) {
           const targetRef = Object.entries(sections).find(([, ref]) => ref.current === entry.target);
           if (targetRef) {
-            console.log(We are displaying ${targetRef[0]});
+            console.log(`We are displaying ${targetRef[0]}`);
             setActiveBtn(targetRef[0]);
           }
         }
@@ -37,7 +38,7 @@ function App() {
     const options = { threshold: 0.5 };
     const observer = new IntersectionObserver(callback, options);
     
-    // Assuming heroRef is the useRef for the element you want to observe
+    // Assuming `heroRef` is the useRef for the element you want to observe
     for (const [, ref] of Object.entries(sections)) {
       const target = ref.current;
       if (target) {
