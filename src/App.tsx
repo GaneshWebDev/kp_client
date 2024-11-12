@@ -1,5 +1,4 @@
 import './App.css'
-import client from './sanityClient'
 import { useEffect,useRef,useState } from 'react'
 import Navbar from './components/navbar'
 import About from './components/about'
