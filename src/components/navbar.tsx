@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { RefObject, useState } from "react";
 import client from "../sanityClient";
 import { useEffect } from "react";
-import imageUrlBuilder from '@sanity/image-url'
 interface HeaderProps {
     hero: RefObject<HTMLDivElement>,
     about: RefObject<HTMLDivElement>,
@@ -16,11 +15,7 @@ interface HeaderProps {
 
 export default function Navbar({ hero, about,  project, certificate, skills, contact, activeBtn }: HeaderProps) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const builder = imageUrlBuilder(client);
     const [data1,setData]=useState<any|null>(null);
-    function urlFor(source:any) {
-        return builder.image(source)
-      }
     useEffect(()=>{
         client.fetch('*[_type == "resume"][0]').then((data)=>{
              console.log(data,'cer');
