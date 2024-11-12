@@ -3,7 +3,7 @@ import {useForm,SubmitHandler} from 'react-hook-form'
 import { motion } from "framer-motion";
 import { PhoneIcon, EnvelopeIcon } from "@heroicons/react/16/solid";
 import client from '../sanityClient';
-import { useEffect,useState,useRef } from "react";
+import { useEffect,useState} from "react";
 type FormValues={
     name:string;
     email:string;
