@@ -16,7 +16,6 @@ export default function Contact(){
     useEffect(()=>{
         client.fetch('*[_type == "contact_details"][0]').then((data)=>{
              setData(data);
-             console.log(data,'con');
         }).catch(err=>{
             console.log(err);
         })
