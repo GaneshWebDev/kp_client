@@ -9,8 +9,10 @@ interface cerType{
   title: string;
   des: string;
 }
+
 export default function Certificates(){
   const [data1,setData]=useState<any|[]>([]);
+  console.log(data1.length)
     useEffect(()=>{
         client.fetch('*[_type == "certificates"][0]').then((data)=>{
              setData(data.certificatesList);
@@ -59,7 +61,7 @@ useEffect(()=>{
      const observer=new IntersectionObserver(entries=>{
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const key = data1.findIndex((certificate: cerType) => certificate.id.toString() === entry.target.id);
+          const key = data1.findIndex((certificate: cerType) => certificate.id.toString() === entry.target.id);
             setViewIdndex(Number(key))
         }
     });
@@ -78,7 +80,7 @@ useEffect(()=>{
      return ()=>{
        observer.disconnect();
      }
-},[certificateRef])
+},[certificateRef,data1])
     return(
         <>
         {data1==null?     
@@ -105,7 +107,8 @@ useEffect(()=>{
       className=" h-screen relative flex flex-col items-center justify-center overflow-hidden mt-10 md:mt-20 ">
         <h1 className=" absolute  top-20 md:top-24 mt-10 md:mt-0  uppercase tracking-[10px]">Certificates</h1>
        <div ref={certificateRef} className=" flex snap-x snap-mandatory overflow-x-scroll  scroll-smooth w-5/6 h-full scrollbar-none  md:h-3/5 mt-6 md:mt-0 " >
-            {data1?.map((certificate:any)=>{return(
+            {data1?.map((certificate:any)=>{
+              return(
               <>
                <Certificate key={certificate.id} certificate={certificate} id={certificate.id.toString()}/>
               
