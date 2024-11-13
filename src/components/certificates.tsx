@@ -16,7 +16,6 @@ export default function Certificates(){
     useEffect(()=>{
         client.fetch('*[_type == "certificates"][0]').then((data)=>{
              setData(data.certificatesList);
-             console.log(data,'cer');
         }).catch(err=>{
             console.log(err);
         })
