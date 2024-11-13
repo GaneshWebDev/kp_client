@@ -23,6 +23,12 @@ export default function Navbar({ hero, about,  project, certificate, skills, con
             console.log(err);
         })
     },[])
+     const getUrlFromId = (ref:any) => {
+        // Example ref: file-207fd9951e759130053d37cf0a558ffe84ddd1c9-mp3
+        // We don't need the first part, unless we're using the same function for files and images
+        const [_file, id, extension] = ref.split('-');
+        return `https://cdn.sanity.io/files/${PROJECT_ID}/${DATASET}/${id}.${extension}`
+      }
     const handleMenuClick = (ref: RefObject<HTMLDivElement>) => {
         ref.current?.scrollIntoView({ behavior: 'smooth' });
         setIsMenuOpen(false); // Close the menu after clicking
@@ -112,8 +118,10 @@ export default function Navbar({ hero, about,  project, certificate, skills, con
                         </li>
                         <li>
                             {data1&&<a
-                                href={data1.file.asset._ref}
+                                href={getUrlFromId(data1.file.asset._ref)}
                                 download="Kranthi_Resume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                             >
                                 Resume
