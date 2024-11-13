@@ -8,7 +8,7 @@ interface ProjectType {
     id: number;
     img?: File;
     title: string;
-    des: string;
+    des?: string;
 }
 
 export default function Projects() {
@@ -73,7 +73,7 @@ export default function Projects() {
                 >
                     <h1 className="absolute top-20 md:top-24 mt-10 md:mt-0 uppercase tracking-[10px]">Projects</h1>
                     <div ref={projectRef} className="flex snap-x snap-mandatory overflow-x-scroll scroll-smooth w-5/6 h-full scrollbar-none md:h-3/5 mt-6 md:mt-0">
-                        {data1.map((project, index) => (
+                        {data1.map((project) => (
                             <Project key={project.id} project={project} id={project.id.toString()} />
                         ))}
                     </div>
