@@ -18,7 +18,6 @@ export default function Navbar({ hero, about,  project, certificate, skills, con
     const [data1,setData]=useState<any|null>(null);
     useEffect(()=>{
         client.fetch('*[_type == "resume"][0]').then((data)=>{
-             console.log(data,'cer');
              setData(data);
         }).catch(err=>{
             console.log(err);
