@@ -19,7 +19,6 @@ export default function Projects() {
     useEffect(() => {
         client.fetch('*[_type == "projects"][0]').then((data) => {
             setData(data.projectList);
-            console.log(data.projectList, 'pro');
         }).catch(err => {
             console.error(err);
         });
@@ -30,7 +29,6 @@ export default function Projects() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const key = data1.findIndex((project: ProjectType) => project.id.toString() === entry.target.id);
-                    console.log(key, 'key');
                     setViewIndex(key !== -1 ? key : 0);
                 }
             });
