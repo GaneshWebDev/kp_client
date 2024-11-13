@@ -17,7 +17,6 @@ export default function Project({ project, id }: ProjectProps) {
     function urlFor(source:any) {
         return builder.image(source)
       }
-    console.log(project);
     const [openText, setOpenText] = useState(false);
     const [showReadMoreButton, setShowReadMoreButton] = useState(false);
     
