@@ -11,7 +11,6 @@ export default function About(){
     const [data1,setData]=useState<any|null>(null);
     useEffect(()=>{
         client.fetch('*[_type == "about"][0]').then((data)=>{
-             console.log(data.image.asset._ref,'data me');
              setData(data);
         }).catch(err=>{
             console.log(err);
