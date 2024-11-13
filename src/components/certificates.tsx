@@ -3,6 +3,12 @@ import Certificate from "./certificate";
 import client from '../sanityClient';
 import SlideIndicator from './slideIndentifier';
 import { useEffect,useRef,useState } from "react";
+interface cerType{
+  id: number;
+  img?: File;
+  title: string;
+  des: string;
+}
 export default function Certificates(){
   const [data1,setData]=useState<any|[]>([]);
     useEffect(()=>{
@@ -53,7 +59,7 @@ useEffect(()=>{
      const observer=new IntersectionObserver(entries=>{
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const key=entry.target.id;
+            const key = data1.findIndex((certificate: cerType) => certificate.id.toString() === entry.target.id);
             setViewIdndex(Number(key))
         }
     });
