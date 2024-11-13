@@ -8,7 +8,7 @@ interface ProjectType {
     id: number;
     img?: File;
     title: string;
-    des?: string;
+    desc: string;
 }
 
 export default function Projects() {
