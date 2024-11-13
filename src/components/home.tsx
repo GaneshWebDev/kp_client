@@ -15,7 +15,6 @@ export default function Hero(){
         client.fetch('*[_type == "home_page_data"][0]').then((data)=>{
              console.log(data.title,'data');
              setData(data);
-             console.log(data1);
         }).catch(err=>{
             console.log(err);
         })
