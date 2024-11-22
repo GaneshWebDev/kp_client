@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from "react";
 
 interface ProjectType {
     id: number;
-    img?: any;
+    img: any;
     title: string;
     desc: string;
 }
