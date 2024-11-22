@@ -1,17 +1,14 @@
 import './App.css'
-import client from './sanityClient'
 import { useEffect,useRef,useState } from 'react'
 import Navbar from './components/navbar'
 import About from './components/about'
 import Projects from './components/projects'
-import Skills from './components/skills'
 import Contact from './components/contact'
-import { initFlowbite } from 'flowbite'
 import Hero from './components/home'
 import Certificates from './components/certificates'
+import {  Routes, Route } from "react-router-dom";
 function App() {
-  const [activeBtn,setActiveBtn]=useState('hero');
-  const sections = {
+  /*const sections = {
     hero: useRef<HTMLDivElement>(null),
     about: useRef<HTMLDivElement>(null),
     course: useRef<HTMLDivElement>(null),
@@ -50,28 +47,17 @@ function App() {
       observer.disconnect();
     };
     
-   },[])
+   },[])*/
   return (
-    <div className='bg-[#e2dfdb] w-[100vw]' style={{fontFamily:'Georgia'}}>
-    <Navbar hero={sections.hero} about={sections.about} course={sections.course} project={sections.project} certificate={sections.certificate} skills={sections.skills} contact={sections.contact} activeBtn={activeBtn}/>
-    <section ref={sections.hero} >
-      <Hero />
-    </section>
-    <section ref={sections.about}>
-      <About />
-    </section> 
-    <section ref={sections.project}>
-      <Projects/>
-    </section> 
-    <section ref={sections.certificate}>
-      <Certificates/>
-    </section> 
-    <section ref={sections.skills}>
-      <Skills/>
-    </section> 
-    <section ref={sections.contact}>
-      <Contact />
-    </section>
+    <div className='bg-[#e2dfdb] w-screen' style={{fontFamily:'Georgia'}}>
+    <Navbar />
+      <Routes>
+          <Route index element={<Hero />} />
+          <Route path='/about' element={<About/>} />
+          <Route path="/projects" element={< Projects/>} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/certificates" element={<Certificates />} />
+      </Routes>
     </div>
   )
 }

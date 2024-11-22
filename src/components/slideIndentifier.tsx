@@ -4,6 +4,7 @@ interface indentifierProps{
 }
 export default function SlideIndicator({num,index}:indentifierProps){
     const indicaters=Array.from({length:num},(_,i)=>i);
+    console.log(index,'index')
     return(
         <div className="absolute flex gap-5 bottom-20 md:bottom-24 mt-10 md:mt-0 text-gray-500 left- uppercase tracking-[12px]">
             {indicaters.map(i=>{
