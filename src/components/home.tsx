@@ -92,7 +92,7 @@ export default function Hero() {
         </div>
 
         {/* Mobile Call to Action */}
-        <div className="md:hidden flex items-end justify-between w-full px-4 pb-6 absolute bottom-8 z-50">
+        <div className="md:hidden flex items-end justify-between w-full px-4 pb-6 absolute bottom-2 z-50">
           {/* Left Column: Arrow */}
           <div className="flex flex-col items-center justify-center ">
             <span className="[writing-mode:vertical-rl] [rotate:180deg] text-[1.4rem]">
