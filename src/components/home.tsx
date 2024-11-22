@@ -44,7 +44,7 @@ export default function Hero() {
     },[])
   return (
   <>
-    <div className="relative w-screen h-[100vh] md:h-screen overflow-scroll scrollbar-none font-sans ">
+    <div className="relative w-screen h-auto  overflow-scroll scrollbar-none font-sans ">
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -61,7 +61,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-white pt-[10vh] md:pt-[18vh]">
+      <div className="relative z-10 flex flex-col items-center justify-center h-[100dvh] text-white pt-[10vh] md:pt-[18vh]">
         {/* Headline */}
         <div className="flex flex-col gap-0 w-full items-center justify-center text-[3rem] md:text-[6rem] font-bold">
           <div className="flex items-center justify-start w-full pl-0 md:pl-[23vw]">
