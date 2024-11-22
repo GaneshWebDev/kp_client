@@ -43,7 +43,7 @@ export default function Project({ project, id }: ProjectProps) {
             transition={{ duration: 1.6 }}
             viewport={{ once: true }}
             id={id}
-            className="relative flex flex-col md:flex-row flex-shrink-0 gap-2 items-start pt-[10%] px-5 justify-center w-full h-full snap-center scroll-smooth border"
+            className="relative flex flex-col md:flex-row flex-shrink-0 gap-2 items-start pt-[10%] px-5 justify-center w-full h-full snap-center scroll-smooth "
         >
             <img className="h-auto md:h-[65%] w-[100%] md:w-[80%] float-left" src={urlFor(project.img.asset._ref).url()} alt="Project" />
             <span className="absolute uppercase text-[12px] md:text-xl font-bold hidden md:flex top-7">{project.title}</span>
