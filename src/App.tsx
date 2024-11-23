@@ -48,7 +48,7 @@ function App() {
     
    },[])*/
   return (
-    <div className='bg-[#e2dfdb] w-screen' style={{fontFamily:'Georgia'}}>
+    <div className='bg-white w-screen' style={{fontFamily:'Georgia'}}>
     <Navbar />
       <Routes>
           <Route index element={<Hero />} />
