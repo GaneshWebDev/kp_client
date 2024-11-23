@@ -32,7 +32,7 @@ export default function About(){
                     </svg>
                     <span className="sr-only">Loading...</span>
                 </div>:<div className="relative flex   items-center justify-center h-screen w-[100vw] snap-center  " >
-                <h1 className="absolute  top-20 md:top-24 mt-10 md:mt-0  uppercase tracking-[10px]">About</h1>
+                <h1 className="absolute  top-20 md:top-24 mt-10 md:mt-5  uppercase tracking-[10px]">About</h1>
                 <div role="status" className=" px-10 md:px-[10%]">
                     {/*<div className="flex items-center justify-center w-[100vw] md:w-[40vw] h-[100%] md:h-[50%] mt-10">
                         <motion.img
