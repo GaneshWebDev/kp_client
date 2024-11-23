@@ -31,7 +31,7 @@ export default function Navbar() {
   }, [isHomePage]);
   return (
     <nav
-      className={`w-full fixed  border top-0 z-50 font-sans transition-all duration-1000 ease-in-out ${
+      className={`w-full fixed  top-0 z-50 font-sans transition-all duration-1000 ease-in-out ${
         isHomePage && !scrolled ? "bg-transparent text-white" : "bg-white text-black"
       }`}
     >
