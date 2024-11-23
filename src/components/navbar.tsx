@@ -39,7 +39,7 @@ export default function Navbar() {
       <div
         className={`${
           open ? "hidden" : "flex"
-        } items-center justify-between md:justify-center px-8 py-6 md:py-8`}
+        } items-center justify-between md:justify-center px-6 py-4 `}
       >
         {/* Logo */}
         <a
@@ -55,7 +55,7 @@ export default function Navbar() {
                 ? "icons8-statistic-32 (2).webp"
                 : "icons8-statistic-32 (3).png"
             }
-            className="h-8 md:h-10"
+            className="h-8 md:h-9"
             alt="Logo"
           />
         </a>
@@ -95,7 +95,7 @@ export default function Navbar() {
         {/* Desktop Links */}
         <div className="hidden md:flex items-center">
           <ul
-            className={`flex gap-12 text-[1.25rem] pl-10 ${
+            className={`flex gap-6 mx-10 text-[1.1rem]  ${
               isHomePage && !scrolled ? "text-white" : "text-black"
             }`}
           >
@@ -158,7 +158,7 @@ export default function Navbar() {
           </ul>
           <NavLink
             to="/contact"
-            className={`ml-6 px-4 py-2 border-2 rounded-full text-lg ${
+            className={`ml-6 px-3 py-1.5 border-2 rounded-full text-[1rem] ${
               isHomePage && !scrolled
                 ? "border-white text-white hover:bg-gray-300 hover:text-black"
                 : "border-black text-black hover:bg-black hover:text-white"
@@ -180,15 +180,15 @@ export default function Navbar() {
           open ? "block" : "hidden"
         } fixed inset-0 bg-white text-black`}
       >
-        <div className="flex items-center justify-between px-8 py-6">
+        <div className="flex items-center justify-between px-6 py-4">
           <a
             href="#"
-            className="flex items-center gap-3 border-0 sm:pl-0 md:mx-0"
+            className="flex items-center gap-3 border-0 "
           >
             <span className="text-[3rem] font-bold">Analyst</span>
             <img
               src="icons8-statistic-32 (3).png"
-              className="h-10"
+              className="h-9"
               alt="Logo"
             />
           </a>
@@ -210,7 +210,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        <ul className="flex flex-col items-start pl-10 mt-8 text-xl font-light space-y-6">
+        <ul className="flex flex-col items-start pl-10 mt-6 text-[1.2rem] font-light space-y-6">
           <li>
             <NavLink
               to="/"
