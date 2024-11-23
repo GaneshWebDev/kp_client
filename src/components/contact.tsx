@@ -47,7 +47,7 @@ export default function Contact(){
         once:true
     }}
      className="relative   h-screen flex flex-col md:flex-row     items-center justify-center space-y-8 overflow-hidden">
-        <h1 className="absolute  top-20 md:top-24 mt-10 md:mt-0  uppercase tracking-[10px]">Contact</h1>
+        <h1 className="absolute  top-20 md:top-24 mt-10 md:mt-5  uppercase tracking-[10px]">Contact</h1>
         <div className="flex flex-col space-y-5">
             <h4 className="text-1xl md:text-3xl font-semibold text-center">
                 I have got just what you need.{" "}<br/>
