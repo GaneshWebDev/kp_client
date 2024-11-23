@@ -104,7 +104,7 @@ useEffect(()=>{
         viewport={{
           once:true
         }}
-      className=" h-screen relative flex flex-col items-center justify-center overflow-hidden mt-10 md:mt-20 ">
+      className=" h-screen relative flex flex-col items-center justify-center overflow-hidden mt-10 ">
         <h1 className=" absolute  top-20 md:top-24 mt-10 md:mt-0  uppercase tracking-[10px]">Certificates</h1>
        <div ref={certificateRef} className=" flex snap-x snap-mandatory overflow-x-scroll  scroll-smooth w-5/6 h-full scrollbar-none  md:h-3/5 mt-6 md:mt-0 " >
             {data1?.map((certificate:any)=>{
