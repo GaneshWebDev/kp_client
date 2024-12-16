@@ -39,12 +39,12 @@ export default function Navbar() {
       <div
         className={`${
           open ? "hidden" : "flex"
-        } items-center justify-between md:justify-center px-6 py-4 `}
+        } items-center justify-between md:justify-evenly px-6 py-4 `}
       >
         {/* Logo */}
         <a
           href="#"
-          className={`flex items-center gap-3 border-0 sm:pl-0 md:mx-0 ${
+          className={`flex md:flex-1  items-center gap-3 border-0 justify-center sm:pl-0 md:mx-0 ${
             isHomePage && !scrolled  ? "text-white" : "text-black"
           }`}
         >
@@ -93,7 +93,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center">
+        <div className="hidden md:flex md:flex-1   justify-center items-center">
           <ul
             className={`flex gap-6 mx-10 text-[1.1rem]  ${
               isHomePage && !scrolled ? "text-white" : "text-black"
@@ -156,7 +156,9 @@ export default function Navbar() {
               </NavLink>
             </li>
           </ul>
-          <NavLink
+        </div>
+        <div className="hidden md:flex md:flex-1 justify-center ">
+        <NavLink
             to="/contact"
             className={`ml-6 px-3 py-1.5 border-2 rounded-full text-[1rem] ${
               isHomePage && !scrolled
