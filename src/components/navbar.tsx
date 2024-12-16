@@ -1,5 +1,5 @@
 import { useLocation, NavLink } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export default function Navbar() {
@@ -7,16 +7,16 @@ export default function Navbar() {
   const isHomePage = location.pathname === "/";
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  
   const toggle = () => {
     setOpen(!open);
   };
+
   useEffect(() => {
-    setScrolled(false);
     if (isHomePage) {
       const handleScroll = () => {
         if (window.scrollY > 90) {
-          console.log('scrolled');
-          setScrolled(true); // Change navbar style after scrolling 50px
+          setScrolled(true); // Change navbar style after scrolling 90px
         } else {
           setScrolled(false);
         }
@@ -29,54 +29,45 @@ export default function Navbar() {
       return () => window.removeEventListener("scroll", handleScroll);
     }
   }, [isHomePage]);
+
+  // Conditional classes
+  const navTextClass = isHomePage && !scrolled ? "text-white" : "text-black";
+  const navHoverClass = isHomePage && !scrolled ? "hover:text-gray-300" : "hover:text-black";
+  const activeLinkClass = isHomePage && !scrolled ? "text-purple-300" : "text-purple-600";
+  const buttonStyle = isHomePage && !scrolled
+    ? "border-white text-white hover:bg-gray-300 hover:text-black"
+    : "border-black text-black hover:bg-black hover:text-white";
+
   return (
     <nav
-      className={`w-full fixed  top-0 z-50 font-sans transition-all duration-1000 ease-in-out ${
+      className={`w-full fixed top-0 z-50 font-sans transition-all duration-1000 ease-in-out ${
         isHomePage && !scrolled ? "bg-transparent text-white" : "bg-white text-black"
       }`}
     >
       {/* Header */}
-      <div
-        className={`${
-          open ? "hidden" : "flex"
-        } items-center justify-between md:justify-evenly px-6 py-4 `}
-      >
+      <div className={`${open ? "hidden" : "flex"} items-center justify-between md:justify-evenly px-6 py-4`}>
         {/* Logo */}
-        <a
-          href="#"
-          className={`flex md:flex-1  items-center gap-3 border-0 justify-center sm:pl-0 md:mx-0 ${
-            isHomePage && !scrolled  ? "text-white" : "text-black"
-          }`}
+        <NavLink
+          to="/"
+          className={`flex md:flex-1 items-center gap-3 border-0 justify-center sm:pl-0 md:mx-0 ${navTextClass}`}
         >
           <span className="text-[2.5rem] font-bold md:text-[3rem]">Analyst</span>
           <img
-            src={
-              isHomePage && !scrolled
-                ? "icons8-statistic-32 (2).webp"
-                : "icons8-statistic-32 (3).png"
-            }
+            src={isHomePage && !scrolled ? "icons8-statistic-32 (2).webp" : "icons8-statistic-32 (3).png"}
             className="h-8 md:h-9"
             alt="Logo"
           />
-        </a>
+        </NavLink>
 
         {/* Hamburger Menu */}
         <div className="flex md:hidden items-center">
-          <span
-            className={`text-[1.5rem] font-light mr-0 ${
-              isHomePage && !scrolled ? "text-white" : "text-black"
-            }`}
-            onClick={toggle}
-          >
-            Menu
-          </span>
           <button
             className="block p-2"
             onClick={toggle}
-            aria-label="Toggle Menu"
+            aria-label="Toggle navigation menu"
           >
             <svg
-              className={`w-8 h-8 ${isHomePage && !scrolled ? "text-white" : "text-black"}`}
+              className={`w-8 h-8 ${navTextClass}`}
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -93,21 +84,13 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex md:flex-1   justify-center items-center">
-          <ul
-            className={`flex gap-6 mx-10 text-[1.1rem]  ${
-              isHomePage && !scrolled ? "text-white" : "text-black"
-            }`}
-          >
+        <div className="hidden md:flex md:flex-1 justify-center items-center">
+          <ul className={`flex gap-6 mx-10 text-[1.1rem] ${navTextClass}`}>
             <li>
               <NavLink
                 to="/"
                 className={({ isActive }) =>
-                  isActive
-                    ? `underline ${
-                        isHomePage && !scrolled ? "text-purple-300" : "text-purple-600"
-                      }`
-                    : `${isHomePage && !scrolled ? "hover:text-gray-300" : "hover:text-black"}`
+                  isActive ? `underline ${activeLinkClass}` : navHoverClass
                 }
               >
                 Home
@@ -117,11 +100,7 @@ export default function Navbar() {
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
-                  isActive
-                    ? `underline ${
-                        isHomePage && !scrolled ? "text-purple-300" : "text-purple-600"
-                      }`
-                    : `${isHomePage && !scrolled ? "hover:text-gray-300" : "hover:text-black"}`
+                  isActive ? `underline ${activeLinkClass}` : navHoverClass
                 }
               >
                 About
@@ -131,11 +110,7 @@ export default function Navbar() {
               <NavLink
                 to="/projects"
                 className={({ isActive }) =>
-                  isActive
-                    ? `underline ${
-                        isHomePage && !scrolled ? "text-purple-300" : "text-purple-600"
-                      }`
-                    : `${isHomePage && !scrolled ? "hover:text-gray-300" : "hover:text-black"}`
+                  isActive ? `underline ${activeLinkClass}` : navHoverClass
                 }
               >
                 Projects
@@ -145,11 +120,7 @@ export default function Navbar() {
               <NavLink
                 to="/certificates"
                 className={({ isActive }) =>
-                  isActive
-                    ? `underline ${
-                        isHomePage ? "text-purple-300" : "text-purple-600"
-                      }`
-                    : `${isHomePage ? "hover:text-gray-300" : "hover:text-black"}`
+                  isActive ? `underline ${activeLinkClass}` : navHoverClass
                 }
               >
                 Certificates
@@ -157,14 +128,12 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
-        <div className="hidden md:flex md:flex-1 justify-center ">
-        <NavLink
+
+        {/* Contact Button */}
+        <div className="hidden md:flex md:flex-1 justify-center">
+          <NavLink
             to="/contact"
-            className={`ml-6 px-3 py-1.5 border-2 rounded-full text-[1rem] ${
-              isHomePage && !scrolled
-                ? "border-white text-white hover:bg-gray-300 hover:text-black"
-                : "border-black text-black hover:bg-black hover:text-white"
-            }`}
+            className={`ml-6 px-3 py-1.5 border-2 rounded-full text-[1rem] ${buttonStyle}`}
           >
             Contact
           </NavLink>
@@ -173,27 +142,16 @@ export default function Navbar() {
 
       {/* Mobile Fullscreen Menu */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: open ? 1 : 0 }}
-        transition={{
-          duration: 0.5,
-        }}
-        className={`${
-          open ? "block" : "hidden"
-        } fixed inset-0 bg-white text-black`}
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: open ? 1 : 0, x: open ? 0 : 100 }}
+        transition={{ duration: 0.5 }}
+        className={`${open ? "block" : "hidden"} fixed inset-0 bg-white text-black`}
       >
         <div className="flex items-center justify-between px-6 py-4">
-          <a
-            href="#"
-            className="flex items-center gap-3 border-0 "
-          >
+          <NavLink to="/" className="flex items-center gap-3">
             <span className="text-[3rem] font-bold">Analyst</span>
-            <img
-              src="icons8-statistic-32 (3).png"
-              className="h-9"
-              alt="Logo"
-            />
-          </a>
+            <img src="icons8-statistic-32 (3).png" className="h-9" alt="Logo" />
+          </NavLink>
           <button className="p-0" onClick={toggle} aria-label="Close Menu">
             <svg
               className="w-8 h-8 text-black"
@@ -218,9 +176,7 @@ export default function Navbar() {
               to="/"
               onClick={toggle}
               className={({ isActive }) =>
-                isActive
-                  ? `underline text-purple-600`
-                  : "hover:text-black"
+                isActive ? `underline ${activeLinkClass}` : navHoverClass
               }
             >
               Home
@@ -231,9 +187,7 @@ export default function Navbar() {
               to="/about"
               onClick={toggle}
               className={({ isActive }) =>
-                isActive
-                  ? `underline text-purple-600`
-                  : "hover:text-black"
+                isActive ? `underline ${activeLinkClass}` : navHoverClass
               }
             >
               About
@@ -244,9 +198,7 @@ export default function Navbar() {
               to="/projects"
               onClick={toggle}
               className={({ isActive }) =>
-                isActive
-                  ? `underline text-purple-600`
-                  : "hover:text-black"
+                isActive ? `underline ${activeLinkClass}` : navHoverClass
               }
             >
               Projects
@@ -257,9 +209,7 @@ export default function Navbar() {
               to="/certificates"
               onClick={toggle}
               className={({ isActive }) =>
-                isActive
-                  ? `underline text-purple-600`
-                  : "hover:text-black"
+                isActive ? `underline ${activeLinkClass}` : navHoverClass
               }
             >
               Certificates
@@ -270,9 +220,7 @@ export default function Navbar() {
               to="/contact"
               onClick={toggle}
               className={({ isActive }) =>
-                isActive
-                  ? `underline text-purple-600`
-                  : "hover:text-black"
+                isActive ? `underline ${activeLinkClass}` : navHoverClass
               }
             >
               Contact
